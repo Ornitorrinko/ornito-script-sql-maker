@@ -1,0 +1,41 @@
+USE [Changepoint]
+GO
+
+IF EXISTS ( SELECT  * FROM sys.objects WHERE   object_id = OBJECT_ID(N'{{func}}') AND type IN (N'FN', N'IF', N'TF'))
+BEGIN
+  DROP FUNCTION [dbo].[{{func}}]
+END
+
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+/*
+ Create date: 	<{{now}}>
+ Description:	<{{description}}>
+*/
+-- =============================================
+
+CREATE FUNCTION [dbo].[{{func}}](
+	{{#if params}}
+		{{params}}
+	{{/if}}
+)
+RETURNS {{output}}
+AS
+BEGIN
+	-- TODO: Your code goes here
+	-- Please replace this code! =)
+	DECLARE @TEMP {{output}}
+	RETURN @TEMP
+END
+
+GO
+
+GRANT EXECUTE ON [dbo].[{{func}}] TO Changepoint, CPACCESS
+GO

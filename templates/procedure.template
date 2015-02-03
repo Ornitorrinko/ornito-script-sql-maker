@@ -1,0 +1,37 @@
+USE [Changepoint]
+GO
+
+IF EXISTS ( SELECT  * FROM sys.objects WHERE   object_id = OBJECT_ID(N'{{storedProcedure}}') AND type IN (N'P', N'PC' ))
+BEGIN
+  DROP PROCEDURE [dbo].[{{storedProcedure}}]
+END
+
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+/*
+ Creation date: 	<{{now}}>
+ Description:	<{{description}}>
+*/
+-- =============================================
+
+CREATE PROCEDURE [dbo].[{{storedProcedure}}]
+  {{#if entityId}}
+    @{{entityId}} UNIQUEIDENTIFIER,
+    @PARA_VAR NUMERIC (5,2) OUTPUT
+  {{/if}}
+AS
+  BEGIN
+    -- TODO: Your code goes here
+    RETURN
+  END
+GO
+
+GRANT EXECUTE ON [dbo].[{{storedProcedure}}] TO Changepoint, CPACCESS
+GO

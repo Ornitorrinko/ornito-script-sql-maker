@@ -1,0 +1,30 @@
+USE [Changepoint]
+GO
+
+IF EXISTS ( SELECT  * FROM sys.views WHERE object_id = OBJECT_ID(N'{{view}}'))
+BEGIN
+  DROP VIEW [dbo].[{{view}}]
+END
+
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+/*
+ Create date: 	<{{now}}>
+ Description:	<{{description}}>
+*/
+-- =============================================
+
+CREATE VIEW [dbo].[{{view}}]
+AS
+	-- TODO: Your code goes here
+GO
+
+GRANT REFERENCES, SELECT ON [dbo].[{{view}}] TO Changepoint, CPACCESS
+GO
