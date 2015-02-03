@@ -1,0 +1,1 @@
+module.exports = require("./bin/script_maker.js");
