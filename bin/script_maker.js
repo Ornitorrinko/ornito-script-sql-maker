@@ -6,9 +6,12 @@
 	var path = require("path");
 	var type = argv.t;
 	var help = argv.h;
+	var authors = require("../package.json").createdBy;
+
+	AUTHOR = authors[argv.a] || "Ornitorrinko";
 
 	if(help){
-		log.help("Usage: node index.js --t 'procedure' or 'function' or 'view'");
+		log.help("Usage: node index.js --t 'procedure' or 'function' or 'view' [--a 'Author position: 0, 1, 2']");
 		return;
 	}
 

@@ -27,6 +27,7 @@
     , description: argv.d || "Nao informado"
     , now: new Date().toISOString()
     , params: params
+    , author: AUTHOR
   };
 
   var template = Handlebars.compile(source);

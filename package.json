@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ornitorrinko",
+  "createdBy": ["Vinicius Mesquita", "Victor Kurauchi", "Jonatas Rossi"],
   "license": "MIT",
   "dependencies": {
     "fast-csv": "^0.5.4",
